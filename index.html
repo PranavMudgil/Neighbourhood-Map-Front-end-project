@@ -1,0 +1,41 @@
+<!Doctype >
+<html>
+<head>
+  <title>Istanbul tourism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+<body >
+  <div class="container-fluid">
+    <div class="row" style="padding:15px">
+      <header class="col-md-12 top">
+        <img class="img-responsive" src="images/wallpaper.png" alt="header img">
+      </header>
+    </div>
+    <div class="row">
+      <div class="col-md-12" >
+          <div class="form-group">
+            <input pickText="text" class="form-control" data-bind="value:search,valueUpdate:'afterkeydown', event: {keyup: pickFilter}" placeholder="Search">
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10" id="map"></div>
+      <div class="col-md-2">
+      <ul class="nav navbar-nav" data-bind="foreach:istanbul">
+          <li data-bind="visible:show, event:{click:$parent.iconBounce},text:pickName" class="list"></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+  <script src="js\jquery.min.js"></script>
+  <script src="js\knockout.js"></script>
+  <script src="bootstrap/js/bootstrap.js"></script>
+  <script src="js\app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTSUxUvbfyWskLiWhPGPJDKU3wruGdO2g&libraries=geometry&v=3&callback=initialMap" onerror="error()">
+</script>
+</body>
+</html>
